@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>인공지능과 부동산</title>
     <style>
-        /* 기본 스타일 */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
         }
-
-        /* 메뉴 바 스타일 */
-        nav {
+        header {
             background-color: #0078D7;
-            padding: 15px 0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #005bb5;
+            padding: 10px;
             text-align: center;
         }
         nav a {
@@ -25,125 +27,166 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
+            font-weight: bold;
         }
-        nav a:hover {
-            color: #FFD700;
-        }
-
-        /* 헤더 스타일 */
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-            margin-bottom: 30px;
-        }
-        header h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        header p {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-
-        /* 섹션 스타일 */
         section {
-            padding: 30px 20px;
-            margin: 0 20px;
-            background-color: white;
+            padding: 20px;
+            margin: 10px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            max-width: 800px;
+            margin: auto;
         }
-        section h2 {
-            font-size: 32px;
-            color: #0078D7;
-            margin-bottom: 15px;
-        }
-
-        /* 버튼 스타일 */
         .btn {
             background-color: #0078D7;
             color: white;
-            padding: 12px 25px;
+            padding: 10px 20px;
             text-decoration: none;
             display: inline-block;
             border-radius: 5px;
-            margin-top: 20px;
-            font-size: 18px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
         }
-        .btn:hover {
-            background-color: #005fa3;
-        }
-
-        /* 푸터 스타일 */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            bottom: 0;
+        .input-box {
             width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .list {
+            margin-top: 20px;
+        }
+        .item {
+            background: #f4f4f4;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>인공지능과 부동산 강의</h1>
+        <p>AI 기술이 부동산 산업에 미치는 영향과 미래 전망</p>
+    </header>
 
-    <!-- 메뉴 바 -->
+    <!-- 네비게이션 바 -->
     <nav>
-        <a href="#overview">강의 개요</a>
-        <a href="#course-info">주요 강의 내용</a>
-        <a href="#schedule">수업 일정</a>
+        <a href="#course-info">강의 개요</a>
+        <a href="#materials">강의자료 등록</a>
+        <a href="#qa">질의하기</a>
         <a href="#contact">연락처</a>
     </nav>
 
-    <!-- 헤더 -->
-    <header>
-        <h1>인공지능과 부동산 강의</h1>
-        <p>AI 기술을 활용한 부동산 데이터 분석과 예측</p>
-    </header>
-
-    <!-- 강의 개요 섹션 -->
-    <section id="overview">
+    <!-- 강의 개요 -->
+    <section id="course-info" class="container">
         <h2>강의 개요</h2>
         <p>이 강의는 부동산 산업에서 인공지능 기술의 활용 방법을 배우고, AI 모델을 활용하여 부동산 데이터를 분석하고 예측하는 방법을 다룹니다.</p>
     </section>
 
-    <!-- 주요 강의 내용 섹션 -->
-    <section id="course-info">
-        <h2>주요 강의 내용</h2>
-        <ul>
-            <li>부동산 데이터 분석</li>
-            <li>AI를 통한 가격 예측 모델 구축</li>
-            <li>머신러닝을 이용한 수요 분석</li>
-            <li>부동산 시장의 디지털 전환</li>
-        </ul>
+    <!-- 강의자료 등록 -->
+    <section id="materials" class="container">
+        <h2>📚 강의자료 등록</h2>
+        <input type="text" id="materialTitle" class="input-box" placeholder="자료 제목 입력">
+        <textarea id="materialContent" class="input-box" rows="4" placeholder="자료 내용을 입력하세요"></textarea>
+        <button onclick="addMaterial()" class="btn">등록</button>
+
+        <h3>📄 등록된 강의자료</h3>
+        <div id="materialList" class="list"></div>
     </section>
 
-    <!-- 수업 일정 섹션 -->
-    <section id="schedule">
-        <h2>수업 일정</h2>
-        <ul>
-            <li>1주차: AI와 부동산 산업 소개</li>
-            <li>2주차: 데이터 분석 및 예측 모델</li>
-            <li>3주차: 머신러닝을 활용한 가격 예측</li>
-            <li>4주차: 실제 사례 분석</li>
-        </ul>
+    <!-- 질의하기 -->
+    <section id="qa" class="container">
+        <h2>💬 질의하기</h2>
+        <input type="text" id="questionTitle" class="input-box" placeholder="질문 제목 입력">
+        <textarea id="questionContent" class="input-box" rows="4" placeholder="질문 내용을 입력하세요"></textarea>
+        <button onclick="addQuestion()" class="btn">질문 등록</button>
+
+        <h3>📌 등록된 질문</h3>
+        <div id="questionList" class="list"></div>
     </section>
 
-    <!-- 연락처 섹션 -->
-    <section id="contact">
-        <h2>연락처</h2>
+    <!-- 연락처 -->
+    <section id="contact" class="container">
+        <h2>📞 연락처</h2>
         <p>📞 전화: 010-1234-5678</p>
         <p>📧 이메일: ai.real.estate@email.com</p>
     </section>
 
-    <!-- 푸터 -->
-    <footer>
-        <p>&copy; 2025 인공지능과 부동산 강의. All Rights Reserved.</p>
-    </footer>
+    <!-- JavaScript -->
+    <script>
+        function addMaterial() {
+            let title = document.getElementById("materialTitle").value;
+            let content = document.getElementById("materialContent").value;
 
+            if (title === "" || content === "") {
+                alert("제목과 내용을 입력하세요!");
+                return;
+            }
+
+            let dataList = JSON.parse(localStorage.getItem("materials")) || [];
+            dataList.push({ title, content });
+            localStorage.setItem("materials", JSON.stringify(dataList));
+
+            displayMaterials();
+            document.getElementById("materialTitle").value = "";
+            document.getElementById("materialContent").value = "";
+        }
+
+        function displayMaterials() {
+            let dataList = JSON.parse(localStorage.getItem("materials")) || [];
+            let listContainer = document.getElementById("materialList");
+            listContainer.innerHTML = "";
+
+            dataList.forEach(item => {
+                let div = document.createElement("div");
+                div.classList.add("item");
+                div.innerHTML = `<h4>${item.title}</h4><p>${item.content}</p>`;
+                listContainer.appendChild(div);
+            });
+        }
+
+        function addQuestion() {
+            let title = document.getElementById("questionTitle").value;
+            let content = document.getElementById("questionContent").value;
+
+            if (title === "" || content === "") {
+                alert("질문의 제목과 내용을 입력하세요!");
+                return;
+            }
+
+            let questionList = JSON.parse(localStorage.getItem("questions")) || [];
+            questionList.push({ title, content });
+            localStorage.setItem("questions", JSON.stringify(questionList));
+
+            displayQuestions();
+            document.getElementById("questionTitle").value = "";
+            document.getElementById("questionContent").value = "";
+        }
+
+        function displayQuestions() {
+            let questionList = JSON.parse(localStorage.getItem("questions")) || [];
+            let listContainer = document.getElementById("questionList");
+            listContainer.innerHTML = "";
+
+            questionList.forEach(item => {
+                let div = document.createElement("div");
+                div.classList.add("item");
+                div.innerHTML = `<h4>${item.title}</h4><p>${item.content}</p>`;
+                listContainer.appendChild(div);
+            });
+        }
+
+        window.onload = function() {
+            displayMaterials();
+            displayQuestions();
+        };
+    </script>
 </body>
 </html>
