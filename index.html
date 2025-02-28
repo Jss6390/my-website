@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인공지능과 부동산</title>
+    <title>나의 공인중개사 웹사이트</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
         header {
-            background-color: #0078D7;
+            background-color: #005bb5;
             color: white;
             padding: 20px;
             text-align: center;
         }
         nav {
-            background-color: #005bb5;
-            padding: 10px;
+            background-color: #003f7d;
             text-align: center;
+            padding: 10px;
         }
         nav a {
             color: white;
@@ -29,20 +29,31 @@
             font-size: 18px;
             font-weight: bold;
         }
-        section {
-            padding: 20px;
-            margin: 10px;
-        }
         .container {
-            background-color: #fff;
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
+        }
+        h2 {
+            color: #005bb5;
+        }
+        .property {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .property img {
+            width: 150px;
+            height: 100px;
+            border-radius: 5px;
+            margin-right: 15px;
         }
         .btn {
-            background-color: #0078D7;
+            background-color: #005bb5;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -52,141 +63,74 @@
             cursor: pointer;
             border: none;
         }
-        .input-box {
+        input, textarea {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .list {
-            margin-top: 20px;
-        }
-        .item {
-            background: #f4f4f4;
-            padding: 10px;
             margin: 5px 0;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>인공지능과 부동산 강의</h1>
-        <p>AI 기술이 부동산 산업에 미치는 영향과 미래 전망</p>
+        <h1>나의 공인중개사</h1>
+        <p>신뢰할 수 있는 부동산 중개 서비스</p>
     </header>
 
-    <!-- 네비게이션 바 -->
     <nav>
-        <a href="#course-info">강의 개요</a>
-        <a href="#materials">강의자료 등록</a>
-        <a href="#qa">질의하기</a>
-        <a href="#contact">연락처</a>
+        <a href="#home">홈</a>
+        <a href="#properties">매물 정보</a>
+        <a href="#about">중개사 소개</a>
+        <a href="#contact">문의하기</a>
     </nav>
 
-    <!-- 강의 개요 -->
-    <section id="course-info" class="container">
-        <h2>강의 개요</h2>
-        <p>이 강의는 부동산 산업에서 인공지능 기술의 활용 방법을 배우고, AI 모델을 활용하여 부동산 데이터를 분석하고 예측하는 방법을 다룹니다.</p>
+    <section id="home" class="container">
+        <h2>🏡 믿을 수 있는 공인중개사</h2>
+        <p>최고의 부동산 서비스를 제공합니다. 원하는 매물을 찾아보세요!</p>
     </section>
 
-    <!-- 강의자료 등록 -->
-    <section id="materials" class="container">
-        <h2>📚 강의자료 등록</h2>
-        <input type="text" id="materialTitle" class="input-box" placeholder="자료 제목 입력">
-        <textarea id="materialContent" class="input-box" rows="4" placeholder="자료 내용을 입력하세요"></textarea>
-        <button onclick="addMaterial()" class="btn">등록</button>
-
-        <h3>📄 등록된 강의자료</h3>
-        <div id="materialList" class="list"></div>
+    <section id="properties" class="container">
+        <h2>🏠 추천 매물</h2>
+        <div class="property">
+            <img src="https://via.placeholder.com/150" alt="아파트1">
+            <div>
+                <h3>강남구 30평 아파트</h3>
+                <p>💰 가격: 10억 | 📍 위치: 강남구 삼성동</p>
+                <button class="btn">자세히 보기</button>
+            </div>
+        </div>
+        <div class="property">
+            <img src="https://via.placeholder.com/150" alt="아파트2">
+            <div>
+                <h3>서초구 25평 아파트</h3>
+                <p>💰 가격: 8억 | 📍 위치: 서초구 반포동</p>
+                <button class="btn">자세히 보기</button>
+            </div>
+        </div>
     </section>
 
-    <!-- 질의하기 -->
-    <section id="qa" class="container">
-        <h2>💬 질의하기</h2>
-        <input type="text" id="questionTitle" class="input-box" placeholder="질문 제목 입력">
-        <textarea id="questionContent" class="input-box" rows="4" placeholder="질문 내용을 입력하세요"></textarea>
-        <button onclick="addQuestion()" class="btn">질문 등록</button>
-
-        <h3>📌 등록된 질문</h3>
-        <div id="questionList" class="list"></div>
+    <section id="about" class="container">
+        <h2>📢 공인중개사 소개</h2>
+        <p>안녕하세요! 신뢰와 정직을 바탕으로 부동산 중개 서비스를 제공하는 공인중개사입니다.</p>
+        <p>📍 주소: 서울시 강남구 역삼동 123-45</p>
+        <p>📞 연락처: 010-1234-5678</p>
+        <p>📧 이메일: realtor@email.com</p>
     </section>
 
-    <!-- 연락처 -->
     <section id="contact" class="container">
-        <h2>📞 연락처</h2>
-        <p>📞 전화: 010-1234-5678</p>
-        <p>📧 이메일: ai.real.estate@email.com</p>
+        <h2>📩 문의하기</h2>
+        <input type="text" id="name" placeholder="이름">
+        <input type="text" id="phone" placeholder="전화번호">
+        <textarea id="message" rows="4" placeholder="문의 내용을 입력하세요"></textarea>
+        <button class="btn" onclick="sendMessage()">문의하기</button>
     </section>
 
-    <!-- JavaScript -->
     <script>
-        function addMaterial() {
-            let title = document.getElementById("materialTitle").value;
-            let content = document.getElementById("materialContent").value;
+        function sendMessage() {
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+            let message = document.getElementById("message").value;
 
-            if (title === "" || content === "") {
-                alert("제목과 내용을 입력하세요!");
-                return;
-            }
-
-            let dataList = JSON.parse(localStorage.getItem("materials")) || [];
-            dataList.push({ title, content });
-            localStorage.setItem("materials", JSON.stringify(dataList));
-
-            displayMaterials();
-            document.getElementById("materialTitle").value = "";
-            document.getElementById("materialContent").value = "";
-        }
-
-        function displayMaterials() {
-            let dataList = JSON.parse(localStorage.getItem("materials")) || [];
-            let listContainer = document.getElementById("materialList");
-            listContainer.innerHTML = "";
-
-            dataList.forEach(item => {
-                let div = document.createElement("div");
-                div.classList.add("item");
-                div.innerHTML = `<h4>${item.title}</h4><p>${item.content}</p>`;
-                listContainer.appendChild(div);
-            });
-        }
-
-        function addQuestion() {
-            let title = document.getElementById("questionTitle").value;
-            let content = document.getElementById("questionContent").value;
-
-            if (title === "" || content === "") {
-                alert("질문의 제목과 내용을 입력하세요!");
-                return;
-            }
-
-            let questionList = JSON.parse(localStorage.getItem("questions")) || [];
-            questionList.push({ title, content });
-            localStorage.setItem("questions", JSON.stringify(questionList));
-
-            displayQuestions();
-            document.getElementById("questionTitle").value = "";
-            document.getElementById("questionContent").value = "";
-        }
-
-        function displayQuestions() {
-            let questionList = JSON.parse(localStorage.getItem("questions")) || [];
-            let listContainer = document.getElementById("questionList");
-            listContainer.innerHTML = "";
-
-            questionList.forEach(item => {
-                let div = document.createElement("div");
-                div.classList.add("item");
-                div.innerHTML = `<h4>${item.title}</h4><p>${item.content}</p>`;
-                listContainer.appendChild(div);
-            });
-        }
-
-        window.onload = function() {
-            displayMaterials();
-            displayQuestions();
-        };
-    </script>
-</body>
-</html>
+            if (name === "" || phone === "" || message === "") {
+                
